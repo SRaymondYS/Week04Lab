@@ -12,6 +12,7 @@
         <title>My Login</title>
     </head>
     <body>
-        <h1></h1>
+        <h1>Home</h1>
+        ${showUser}
     </body>
 </html>
