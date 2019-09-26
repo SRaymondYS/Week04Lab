@@ -19,8 +19,21 @@ public class LoginServlet extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {
-        getServletContext().getRequestDispatcher("/WEB-INF/login.jsp")
-            .forward(request, response);
+        String str = request.getParameter("logout");
+        HttpSession session = request.getSession();
+        
+        if(str == null)
+        {
+            getServletContext().getRequestDispatcher("/WEB-INF/login.jsp")
+                .forward(request, response);
+        }
+        else if(str.equals(""))
+        {
+            session.invalidate();
+            
+            getServletContext().getRequestDispatcher("/WEB-INF/login.jsp")
+                .forward(request, response);
+        }
     }
 
     

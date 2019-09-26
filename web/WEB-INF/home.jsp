@@ -12,7 +12,8 @@
         <title>My Login</title>
     </head>
     <body>
-        <h1>Home</h1>
-        ${showUser}
+        <h1>Home Page</h1>
+        <h3>Hello ${showUser}.</h3>
+        <a href="login?logout">Log out</a>
     </body>
 </html>
